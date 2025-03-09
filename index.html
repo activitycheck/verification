@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Verification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://cdn.prod.website-files.com/6310e7dee49f0866da8eed4c/63adcc1db02d660497f9957e_Drift%20Full%20Logo%20White.png" alt="Logo" class="logo">
+        <h1>Crypto Exchange Face Verification</h1>
+
+        <!-- Видео контейнер -->
+        <div class="video-container">
+            <video id="video" autoplay></video>
+        </div>
+
+        <!-- Статусные сообщения -->
+        <p id="status-message">Put your face in the frame</p>
+
+        <!-- Кнопка для начала верификации -->
+        <button id="start-btn" class="start-btn" disabled>Start Verification</button>
+
+        <!-- Спиннер для таймера -->
+        <div id="spinner" class="spinner"></div>
+
+        <!-- Таймер -->
+        <p id="timer" class="timer"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

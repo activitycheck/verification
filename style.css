@@ -1,0 +1,158 @@
+/* Основной фон */
+body {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://i.ibb.co/Q7T1DNNc/66ffb3433bc7e83a1e0815c0-6310e7dee49f0850538eee2c-What20-De-Fi-1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Контейнер */
+.container {
+    background: rgba(24, 24, 24, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+/* Логотип */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: auto;
+}
+
+/* Заголовок */
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+    background: linear-gradient(135deg, #ffcc00, #9b4dff, #00c8ff);
+    background-clip: text;
+    color: transparent;
+}
+
+/* Видео контейнер */
+.video-container {
+    position: relative;
+    width: 230px;
+    height: 320px;
+    border-radius: 50%; /* Сделать контейнер круглым */
+    border: 6px solid transparent;
+    background-image: linear-gradient(135deg, #ffcc00, #9b4dff, #00c8ff);
+    background-origin: border-box;
+    overflow: hidden; /* Скрываем видео, выходящее за пределы контейнера */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Устанавливаем video-container в фон */
+}
+
+/* Видео */
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Видео будет обрезано, но сохранит соотношение сторон */
+    position: absolute; /* Убираем его из обычного потока, чтобы оно не перекрывалось другими элементами */
+    z-index: 0; /* Видео всегда будет находиться на заднем плане */
+}
+
+/* Статусный текст */
+p {
+    font-size: 16px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #D5D8DC;
+}
+
+/* Кнопка Start Verification */
+.start-btn {
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 12px 35px;
+    font-size: 18px;
+    background: linear-gradient(135deg, #FF8C00, #9B4DFF, #1F618D);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* Убедимся, что кнопка на переднем плане */
+}
+
+.start-btn:disabled {
+    background: grey;
+    cursor: not-allowed;
+}
+
+/* Спиннер */
+.spinner {
+    margin-top: 20px;
+    display: none;
+    border: 6px solid rgba(0, 0, 0, 0.1);
+    border-top: 6px solid #00c8ff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    z-index: 2; /* Спиннер тоже должен быть на переднем плане */
+}
+
+/* Анимация спиннера */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Медиазапрос для мобильных устройств */
+@media (max-width: 600px) {
+    /* Видео контейнер на мобильных устройствах */
+    .video-container {
+        width: 180px; /* Меньший размер для мобильных */
+        height: 240px;
+    }
+
+    /* Видео */
+    video {
+        object-fit: cover; /* Видео должно покрывать контейнер */
+    }
+
+    /* Уменьшение размеров контейнера */
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .start-btn {
+        font-size: 16px;
+        padding: 10px 30px;
+    }
+}
